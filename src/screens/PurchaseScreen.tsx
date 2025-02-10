@@ -115,7 +115,7 @@ const PurchaseScreen = () => {
           />
           <Button
             mode="contained"
-            onPress={() => setModalVisible(true)}
+            onPress={handleAddProduct}
             style={styles.button}
           >
             Adicionar Produto

@@ -16,10 +16,13 @@ const LoginScreen = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
 
   const handleLogin = () => {
-    if (username && password) {
+    const validUsername = "Empresa";
+    const validPassword = "123456";
+
+    if (username === validUsername && password === validPassword) {
       navigation.navigate("Dashboard");
     } else {
-      alert("Por favor, preencha todos os campos.");
+      alert("Usuário ou senha incorretos.");
     }
   };
 

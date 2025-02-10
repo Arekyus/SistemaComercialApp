@@ -9,7 +9,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*", "App.tsx", "index.ts"],
-  "exclude": ["node_modules", "build", "dist", ".expo"],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
   "extends": "expo/tsconfig.base"
 }

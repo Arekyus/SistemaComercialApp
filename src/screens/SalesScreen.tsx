@@ -83,6 +83,25 @@ const SalesScreen = () => {
           >
             Adicionar Produto
           </Button>
+          <Button
+            mode="contained"
+            onPress={() =>
+              handleFinalizeSale(
+                customerName,
+                customerPhone,
+                selectedProducts,
+                setSelectedProducts,
+                () => {
+                  setCustomerName("");
+                  setCustomerPhone("");
+                  setSelectedProducts([]);
+                }
+              )
+            }
+            style={styles.button}
+          >
+            Finalizar Venda
+          </Button>
         </Card.Content>
       </Card>
     </View>
