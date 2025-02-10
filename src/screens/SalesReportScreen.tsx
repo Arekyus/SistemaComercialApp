@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { View, StyleSheet, FlatList } from "react-native";
 import { Card, Title, List } from "react-native-paper";
 import { db } from "../database/db";
-import { Sale } from "../models/Sale"; // Importe a interface Sale
+import { Sale } from "../models/Sale";
 
 const SalesReportScreen = () => {
-  const [sales, setSales] = useState<Sale[]>([]); // Defina o tipo do estado
+  const [sales, setSales] = useState<Sale[]>([]);
 
   useEffect(() => {
     fetchSales();
@@ -16,7 +16,7 @@ const SalesReportScreen = () => {
       tx.executeSql(
         "SELECT * FROM sales",
         [],
-        (_, { rows }) => setSales(rows.raw()), // Use rows.raw()
+        (_, { rows }) => setSales(rows.raw()),
         (_, error) => console.error("Error fetching sales", error)
       );
     });

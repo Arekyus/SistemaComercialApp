@@ -2,17 +2,15 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import { Button, Card, Title } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "../navigation/types"; // Importe o tipo das rotas
-import { StackNavigationProp } from "@react-navigation/stack"; // Importe o tipo de navegação
+import { RootStackParamList } from "../navigation/types";
+import { StackNavigationProp } from "@react-navigation/stack";
 
-// Defina o tipo de navegação para a tela Dashboard
 type DashboardScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
   "Dashboard"
 >;
 
 const DashboardScreen = () => {
-  // Use o tipo de navegação corretamente
   const navigation = useNavigation<DashboardScreenNavigationProp>();
 
   return (

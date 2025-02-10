@@ -30,15 +30,14 @@ export default [
       '@typescript-eslint': typescriptEslint,
     },
     rules: {
-      // Regras personalizadas e plugins
-      'react/react-in-jsx-scope': 'off', // React não precisa ser importado em JSX com React 17+
-      'react/prop-types': 'off', // Desativa a exigência de prop-types
-      'jsx-a11y/anchor-is-valid': 'off', // Desativa a exigência de âncoras válidas
-      '@typescript-eslint/no-explicit-any': 'off', // Permite 'any' no TypeScript
-      '@typescript-eslint/no-unused-vars': 'warn', // Avisos de variáveis não usadas no TypeScript
-      'react-native/no-inline-styles': 'off', // Desativa a restrição de estilos inline no React Native
-      'import/no-unresolved': 'off', // Ignora problemas de importação não resolvidos
-      'import/no-extraneous-dependencies': 'off', // Ignora dependências extra
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
+      'jsx-a11y/anchor-is-valid': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': 'warn',
+      'react-native/no-inline-styles': 'off',
+      'import/no-unresolved': 'off',
+      'import/no-extraneous-dependencies': 'off',
       'eslint:recommended': 'error',
       'plugin:react/recommended': 'error',
       'plugin:react-native/all': 'error',
@@ -49,11 +48,10 @@ export default [
     },
     settings: {
       react: {
-        version: 'detect', // Detecta a versão do React automaticamente
+        version: 'detect',
       },
     },
-    // Regras específicas para arquivos TypeScript, sem o uso de "overrides"
-    
+        
       files: ['*.ts', '*.tsx'],
       rules: {
         '@typescript-eslint/no-unused-vars': 'warn',

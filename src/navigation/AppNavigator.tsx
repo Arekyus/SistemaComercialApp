@@ -2,13 +2,13 @@ import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "../screens/LoginScreen";
 import DashboardScreen from "../screens/DashboardScreen";
 import ProductListScreen from "../screens/ProductListScreen";
-import ProductEditScreen from "../screens/ProductEditScreen"; // Importe a tela
+import ProductEditScreen from "../screens/ProductEditScreen";
 import SalesScreen from "../screens/SalesScreen";
 import SalesReportScreen from "../screens/SalesReportScreen";
 import PurchaseScreen from "../screens/PurchaseScreen";
-import { RootStackParamList } from "./types"; // Importe o tipo das rotas
+import { RootStackParamList } from "./types";
 
-const Stack = createStackNavigator<RootStackParamList>(); // Use o tipo aqui
+const Stack = createStackNavigator<RootStackParamList>();
 
 const AppNavigator = () => (
   <Stack.Navigator initialRouteName="Login">

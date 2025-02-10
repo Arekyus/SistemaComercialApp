@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "../navigation/types";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { db } from "../database/db";
-import { Product } from "../models/Product"; // Importe a interface Product
+import { Product } from "../models/Product";
 
 type ProductListScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -13,17 +13,16 @@ type ProductListScreenNavigationProp = StackNavigationProp<
 >;
 
 const ProductListScreen = () => {
-  const [products, setProducts] = useState<Product[]>([]); // Defina o tipo do estado
+  const [products, setProducts] = useState<Product[]>([]);
   const navigation = useNavigation<ProductListScreenNavigationProp>();
 
-  // Função para buscar os produtos do banco de dados
   const fetchProducts = () => {
     db.transaction((tx) => {
       tx.executeSql(
         "SELECT * FROM products",
         [],
         (_, { rows }) => {
-          console.log("Products fetched:", rows.raw()); // Exibe os produtos no console
+          console.log("Products fetched:", rows.raw());
           setProducts(rows.raw());
         },
         (_, error) => console.error("Error fetching products:", error)
@@ -31,12 +30,10 @@ const ProductListScreen = () => {
     });
   };
 
-  // Busca os produtos quando a tela é carregada
   useEffect(() => {
     fetchProducts();
   }, []);
 
-  // Função para excluir um produto
   const handleDelete = (id: string) => {
     db.transaction((tx) => {
       tx.executeSql(
@@ -44,7 +41,7 @@ const ProductListScreen = () => {
         [id],
         () => {
           console.log("Product deleted:", id);
-          fetchProducts(); // Atualiza a lista de produtos após a exclusão
+          fetchProducts();
         },
         (_, error) => console.error("Error deleting product:", error)
       );
@@ -53,7 +50,7 @@ const ProductListScreen = () => {
 
   return (
     <View style={styles.container}>
-      {/* Botão para adicionar um novo produto */}
+      {}
       <Button
         mode="contained"
         onPress={() =>
@@ -67,7 +64,7 @@ const ProductListScreen = () => {
       {/* Lista de produtos */}
       <FlatList
         data={products}
-        keyExtractor={(item) => item.id} // O ID já é uma string
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <Card style={styles.card}>
             <Card.Content>
@@ -99,7 +96,6 @@ const ProductListScreen = () => {
   );
 };
 
-// Estilos da tela
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -113,11 +109,11 @@ const styles = StyleSheet.create({
   },
   editButton: {
     marginTop: 10,
-    backgroundColor: "#2196F3", // Cor azul para o botão de editar
+    backgroundColor: "#2196F3",
   },
   deleteButton: {
     marginTop: 10,
-    backgroundColor: "#F44336", // Cor vermelha para o botão de excluir
+    backgroundColor: "#F44336",
   },
 });
 

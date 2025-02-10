@@ -19,10 +19,7 @@ const SalesForm: React.FC<SalesFormProps> = ({ onSubmit }) => {
     Array<{ id: number; quantity: number; price: number }>
   >([]);
 
-  const handleAddProduct = () => {
-    // Lógica para adicionar produtos ao pedido
-    // Exemplo: abrir um modal para selecionar produtos
-  };
+  const handleAddProduct = () => {};
 
   const handleSubmit = () => {
     if (!customerName || !customerPhone || selectedProducts.length === 0) {

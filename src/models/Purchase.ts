@@ -1,14 +1,14 @@
-import { Product } from "./Product"; // Importe a interface Product
+import { Product } from "./Product";
 
 export interface Purchase {
-  id: number; // Identificador único da compra
-  purchaseNumber: string; // Número da compra (ex: "COMP-001")
-  supplierName: string; // Nome do fornecedor
-  date: string; // Data da compra (ex: "2023-10-01")
+  id: number;
+  purchaseNumber: string;
+  supplierName: string;
+  date: string;
   products: Array<{
-    product: Product; // Produto comprado
-    quantity: number; // Quantidade comprada
-    cost: number; // Custo unitário do produto na compra
+    product: Product;
+    quantity: number;
+    cost: number;
   }>;
-  totalAmount: number; // Valor total da compra
+  totalAmount: number;
 }

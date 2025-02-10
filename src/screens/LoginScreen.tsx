@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { View, StyleSheet, Image } from "react-native";
 import { Button, TextInput, Title } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "../navigation/types"; // Importe o tipo das rotas
-import { StackNavigationProp } from "@react-navigation/stack"; // Importe o tipo de navegação
+import { RootStackParamList } from "../navigation/types";
+import { StackNavigationProp } from "@react-navigation/stack";
 
-// Defina o tipo de navegação para a tela Login
 type LoginScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
   "Login"
@@ -17,9 +16,8 @@ const LoginScreen = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
 
   const handleLogin = () => {
-    // Lógica de autenticação (pode ser integrada com um backend ou banco de dados)
     if (username && password) {
-      navigation.navigate("Dashboard"); // Navegue para a tela Dashboard
+      navigation.navigate("Dashboard");
     } else {
       alert("Por favor, preencha todos os campos.");
     }
